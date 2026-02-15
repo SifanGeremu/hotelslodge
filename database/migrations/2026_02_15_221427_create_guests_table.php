@@ -22,7 +22,9 @@ return new class extends Migration
             $table->date('checkout_date')->nullable();
             $table->date('checkin_date')->nullable();
             
-            $table->timestamps('created_at')->useCurrent();
+            $table->timestamp('created_at')->useCurrent();
+$table->timestamp('updated_at')->useCurrent();
+
              $table->foreign('tenant_id')->references('hotel_id')->on('hotels')->onDelete('cascade');
         });
     }

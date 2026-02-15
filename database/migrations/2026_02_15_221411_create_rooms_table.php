@@ -19,7 +19,10 @@ return new class extends Migration
             $table->decimal('price_per_night', 8, 2);
             $table->enum('status',['available','occupied','maintenance'])->default('available');
             $table->foreign('hotel_id')->references('hotel_id')->on('hotels')->onDelete('cascade');
-            $table->timestamps('created_at')->useCurrent();
+           
+            $table->timestamp('created_at')->useCurrent();
+$table->timestamp('updated_at')->useCurrent();
+
         });
     }
 

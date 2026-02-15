@@ -17,7 +17,9 @@ return new class extends Migration
             $table->unsignedBigInteger('room_id');
             $table->date('checkin_date')->nullable();
             $table->date('checkout_date')->nullable();
-            $table->timestamps('created_at')->useCurrent();
+           $table->timestamp('created_at')->useCurrent();
+$table->timestamp('updated_at')->useCurrent();
+  
         });
     }
 
