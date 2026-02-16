@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('guests', function (Blueprint $table) {
             $table->id('guest_id');
-            $table->unsignedBigInteger('tenant_id');
+            $table->unsignedBigInteger('hotel_id');
             $table->string('first_name');
             $table->string('last_name');
             $table->string('email')->unique();
@@ -25,7 +25,7 @@ return new class extends Migration
             $table->timestamp('created_at')->useCurrent();
 $table->timestamp('updated_at')->useCurrent();
 
-             $table->foreign('tenant_id')->references('hotel_id')->on('hotels')->onDelete('cascade');
+             $table->foreign('hotel_id')->references('hotel_id')->on('hotels')->onDelete('cascade');
         });
     }
 
